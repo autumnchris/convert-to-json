@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/autumnchris/convert-to-json/issues"
   },
-  "homepage": "https://github.com/autumnchris/convert-to-json#readme"
+  "homepage": "https://github.com/autumnchris/convert-to-json#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
 }
