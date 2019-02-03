@@ -1,7 +1,7 @@
 {
   "name": "convert-to-json-api",
   "version": "1.0.0",
-  "description": "",
+  "description": "An API that takes CSV files and XML files and converts them to JSON.",
   "main": "app.js",
   "scripts": {
     "start": "node app",
