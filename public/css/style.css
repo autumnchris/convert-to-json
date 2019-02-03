@@ -2,3 +2,20 @@ html {
   background: #1d1d1d;
   background: linear-gradient(120deg, #1d1d1d, #31283a) fixed;
 }
+
+p {
+  line-height: 24px;
+  margin: 15px 0 10px;
+}
+
+a,
+a:visited,
+a:hover,
+a:active,
+a:focus {
+  color: hsl(270, 100%, 85%);
+}
+
+hr {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+}
