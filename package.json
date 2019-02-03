@@ -1,5 +1,5 @@
 {
-  "name": "convert-to-json",
+  "name": "convert-to-json-api",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/autumnchris/convert-to-json.git"
+    "url": "git+https://github.com/autumnchris/convert-to-json-api.git"
   },
   "author": "autumnchris",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/autumnchris/convert-to-json/issues"
+    "url": "https://github.com/autumnchris/convert-to-json-api/issues"
   },
-  "homepage": "https://github.com/autumnchris/convert-to-json#readme",
+  "homepage": "https://github.com/autumnchris/convert-to-json-api#readme",
   "dependencies": {
     "express": "^4.16.4"
   }
