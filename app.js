@@ -9,4 +9,8 @@ app.get('/', (req, res) => {
 
 app.use(express.static(`${__dirname}/public`));
 
+app.use((req, res) => {
+  res.sendFile(`${__dirname}/views/404.html`, 404);
+});
+
 app.listen(port, console.log(`Server is listening at port ${port}.`));
