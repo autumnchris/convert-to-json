@@ -1,5 +1,7 @@
 const express = require('express');
+const multer  = require('multer');
 
+const upload = multer().single('upfile');
 const app = express();
 const port = process.env.PORT || 3000;
 
