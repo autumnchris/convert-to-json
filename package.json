@@ -18,7 +18,9 @@
   },
   "homepage": "https://autumnchris-convert-to-json.herokuapp.com",
   "dependencies": {
+    "csvtojson": "^2.0.8",
     "express": "^4.16.4",
-    "multer": "^1.4.1"
+    "multer": "^1.4.1",
+    "xml-js": "^1.6.9"
   }
 }
