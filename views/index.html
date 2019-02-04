@@ -17,5 +17,17 @@
       <p>View the <a href="https://github.com/autumnchris/convert-to-json-api" target="_blank">source code</a> for this project.</p>
       <hr>
     </header>
+    <main>
+      <h3>Project Usage</h3>
+      <p>Upload a CSV file or XML file in the form below to convert its data to JSON syntax.</p>
+      <form action="/api/convert" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+          <input type="file" name="upfile" accept="text/csv, text/xml" aria-label="upload file" required>
+        </div>
+        <div class="button-group">
+          <input type="submit" value="Upload">
+        </div>
+      </form>
+    </main>
   </body>
 </html>
