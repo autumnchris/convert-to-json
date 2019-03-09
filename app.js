@@ -1,7 +1,7 @@
 const express = require('express');
 const multer  = require('multer');
 const csv = require('csvtojson');
-const xml = require('xml-js');
+const xml = require('xml2js').parseString;
 
 const upload = multer().single('upfile');
 const app = express();
@@ -23,7 +23,14 @@ app.post('/api/convert', upload, (req, res) => {
       });
       break;
     case 'text/xml':
-      res.json(JSON.parse(xml.xml2json(file, {compact: true, spaces: 4})));
+      return xml(file, {
+        attrkey: 'attributes',
+        charkey: 'text',
+        trim: true,
+        explicitArray: false
+      }, (err, json) => {
+        res.json(json);
+      });
       break;
     default:
       res.json({
