@@ -1,42 +1,22 @@
 const express = require('express');
-const multer  = require('multer');
-const csv = require('csvtojson');
-const xml = require('xml2js').parseString;
+const indexRouter = require('./routes/index');
+const apiRouter = require('./routes/api');
 
-const upload = multer().single('upfile');
 const app = express();
 const port = process.env.PORT || 3000;
 
+app.set('views', `${__dirname}/views`);
+app.set('view engine', 'ejs');
+
 app.use(express.static(`${__dirname}/public`));
 
-app.post('/api/convert', upload, (req, res) => {
-  const file = req.file.buffer.toString('utf8');
+app.use('/', indexRouter);
+app.use('/api/convert', apiRouter);
 
-  switch(req.file.mimetype) {
-    case 'text/csv':
-      return csv().fromString(file).then(json => {
-        res.json(json);
-      });
-      break;
-    case 'text/xml':
-      return xml(file, {
-        attrkey: 'attributes',
-        charkey: 'text',
-        trim: true,
-        explicitArray: false
-      }, (err, json) => {
-        res.json(json);
-      });
-      break;
-    default:
-      res.json({
-        error: 'File unable to be converted to JSON. Please upload a CSV file or a XML file instead.'
-      })
-  }
-});
-
-app.use((req, res) => {
-  res.status(404).sendFile(`${__dirname}/public/404.html`);
+app.use((req, res, next) => {
+    res.status(404).render('404.ejs', {title: 'Page not found | '});
 });
 
 app.listen(port, console.log(`Server is listening at port ${port}.`));
+
+module.exports = app;

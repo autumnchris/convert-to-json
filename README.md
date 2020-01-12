@@ -6,8 +6,8 @@ An API that takes CSV files and XML files and converts them to JSON.
 
 ## Built With
 * [Express.js](https://expressjs.com)
+* [EJS](https://ejs.co)
 * CSS3
-* HTML5
 * [csvtojson](https://github.com/Keyang/node-csvtojson)
 * [xml2js](https://github.com/Leonidas-from-XIV/node-xml2js)
 * [Google Fonts](https://fonts.google.com)
