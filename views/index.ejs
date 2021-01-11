@@ -4,22 +4,22 @@
   <body>
     <header>
       <h1>Convert to JSON API</h1>
-      <h2>Created by <a href="https://autumnbullard-portfolio.herokuapp.com" target="_blank">Autumn Bullard</a> &copy; <%= new Date().getFullYear(); %></h2>
+      <p>Created by <a href="https://autumnbullard-portfolio.herokuapp.com" target="_blank">Autumn Bullard</a> &copy; <%= new Date().getFullYear(); %></p>
+    </header>
+    <main>
       <p>An API that takes CSV files and XML files and converts them to JSON.</p>
       <p>View the <a href="https://github.com/autumnchris/convert-to-json-api" target="_blank">source code</a> for this project.</p>
       <hr>
-    </header>
-    <main>
-      <h3>Project Usage</h3>
-      <p>Upload a CSV file or XML file in the form below to convert its data to JSON syntax.</p>
-      <form action="/api/convert" method="post" enctype="multipart/form-data">
-        <div class="form-group">
-          <input type="file" name="upfile" accept="text/csv, text/xml" aria-label="upload file" required>
-        </div>
-        <div class="button-group">
-          <input type="submit" value="Upload">
-        </div>
-      </form>
+      <section>
+        <h2>Project Usage</h2>
+        <p>Upload a CSV file or XML file in the form below to convert its data to JSON syntax.</p>
+        <form action="/api/convert" method="post" enctype="multipart/form-data">
+          <div class="form-group">
+            <input type="file" name="upfile" accept="text/csv, text/xml" aria-label="Select a file" required>
+          </div>
+          <input type="submit" class="button" value="Upload">
+        </form>
+      </section>
     </main>
   </body>
 </html>
