@@ -13,13 +13,35 @@
       <section>
         <h2>Project Usage</h2>
         <p>Upload a CSV file or XML file in the form below to convert its data to JSON syntax.</p>
-        <form action="/api/convert" method="post" enctype="multipart/form-data">
-          <div class="form-group">
-            <input type="file" name="upfile" accept="text/csv, text/xml" aria-label="Select a file" required>
+        <form class="file-upload-form" action="/api/convert" method="post" enctype="multipart/form-data">
+          <div class="form-group file-group">
+            <input type="file" class="file-upload-input" name="upfile" accept="text/csv, text/xml" id="file-upload-input">
+            <label class="button file-upload-label" for="file-upload-input" id="file-upload-label">Select a File</label>
+            <p class="file-upload-file-name">No file selected</p>
           </div>
-          <input type="submit" class="button" value="Upload">
+          <input type="submit" class="button" value="Submit">
         </form>
       </section>
     </main>
+    <script>
+      const fileInput = document.getElementById('file-upload-input');
+      const formErrorMessage = document.createElement('p');
+      formErrorMessage.classList.add('message', 'error-message');
+      formErrorMessage.innerHTML = `<span class="fa fa-exclamation-circle fa-lg fa-fw"></span> Please select a CSV file or XML file to submit the form.`;
+      let fileNameMessage = 'No file selected';
+
+      document.getElementById('file-upload-input').addEventListener('change', event => {
+        event.target.files.length ? fileNameMessage = event.target.files[0].name : fileNameMessage = 'No file selected';
+        document.querySelector('.file-upload-file-name').innerHTML = fileNameMessage;
+      }, false);
+
+      document.querySelector('.file-upload-form').addEventListener('submit', event => {
+        
+        if (fileNameMessage === 'No file selected') {
+          event.preventDefault();
+          document.querySelector('main section').appendChild(formErrorMessage);
+        }
+      });
+    </script>
   </body>
 </html>

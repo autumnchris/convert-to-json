@@ -98,7 +98,8 @@ details:focus,
 input:focus,
 select:focus,
 textarea:focus,
-[tabindex]:focus {
+[tabindex]:focus,
+.file-upload-input:focus + .file-upload-label {
   box-shadow: 0 0 3px 3px hsla(203, 95%, 62%, 0.8);
   outline: none;
 }
@@ -125,6 +126,15 @@ textarea:focus,
   text-decoration: none;
 }
 
+.message {
+  border-radius: 5px;
+  line-height: 1.55;
+  margin: 20px auto;
+  max-width: 800px;
+  padding: 15px 10px;
+  text-align: center;
+}
+
 /* SPECIFIC ELEMENT STYLES */
 
 h1 {
@@ -145,16 +155,36 @@ form {
   padding-top: 28px;
 }
 
-input[type=file] {
+.file-group {
   background: hsla(0, 0%, 0%, 0.2);
-  border-radius: 3px;
-  cursor: pointer;
-  letter-spacing: 1px;
+  border-radius: 5px;
+  margin: 0 auto;
+  max-width: 400px;
+  padding: 40px 20px 20px;
+}
+
+.file-upload-input {
+  border: 0;
+  height: 0.1px;
+  opacity: 0;
   overflow: hidden;
-  padding: 20px;
+  padding: 0;
+  position: absolute;
+  width: 0.1px;
+  z-index: -1;
+}
+
+.file-upload-file-name {
+  overflow: hidden;
+  margin-bottom: 0;
   text-overflow: ellipsis;
   white-space: nowrap;
-  width: 100%;
+}
+
+.error-message {
+  background: hsl(349, 96%, 95%);
+  border: 1px solid hsl(349, 96%, 90%);
+  color: hsl(349, 96%, 26%);
 }
 
 /* MEDIA QUERIES */
