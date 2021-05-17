@@ -2,6 +2,7 @@
 
 html {
   background: transparent;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   color: hsl(0, 0%, 100%);
   font-family: Oxygen, sans-serif;
@@ -11,9 +12,11 @@ html {
 
 body {
   background: hsl(0, 0%, 11%);
+  background: -o-linear-gradient(330deg, hsl(0, 0%, 11%), hsl(270, 18%, 19%)) fixed;
   background: linear-gradient(120deg, hsl(0, 0%, 11%), hsl(270, 18%, 19%)) fixed;
   font-size: 0.9rem;
   min-height: 100%;
+  -ms-scroll-chaining: none;
   overscroll-behavior: none;
   padding: 0 20px;
   position: relative;
@@ -42,6 +45,7 @@ h3,
 h4,
 h5,
 h6 {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   margin-top: 0;
 }
@@ -56,6 +60,7 @@ p,
 form,
 input,
 hr {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -101,6 +106,7 @@ select:focus,
 textarea:focus,
 [tabindex]:focus,
 .file-upload-input:focus + .file-upload-label {
+  -webkit-box-shadow: 0 0 3px 3px hsla(203, 95%, 62%, 0.8);
   box-shadow: 0 0 3px 3px hsla(203, 95%, 62%, 0.8);
   outline: none;
 }
@@ -178,6 +184,7 @@ form {
 .file-upload-file-name {
   overflow: hidden;
   margin-bottom: 0;
+  -o-text-overflow: ellipsis;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
