@@ -10,7 +10,15 @@
       <p>An API that takes CSV files and XML files and converts them to JSON.</p>
       <p>View the <a href="https://github.com/autumnchris/convert-to-json-api" target="_blank">source code</a> for this project.</p>
       <hr>
-      <section>
+      <section id="file-upload-section">
+        <noscript>
+          <p class="message info-message"><span class="fa fa-info-circle fa-lg fa-fw"></span> This site uses JavaScript. Please enable JavaScript in your browser.</p>
+        </noscript>
+      </section>
+    </main>
+    <script>
+      const fileUploadSection = document.getElementById('file-upload-section');
+      fileUploadSection.innerHTML = `
         <h2>Project Usage</h2>
         <p>Upload a CSV file or XML file in the form below to convert its data to JSON syntax.</p>
         <form class="file-upload-form" action="/api/convert" method="post" enctype="multipart/form-data">
@@ -20,10 +28,8 @@
             <p class="file-upload-file-name">No file selected</p>
           </div>
           <input type="submit" class="button" value="Submit">
-        </form>
-      </section>
-    </main>
-    <script>
+        </form>`;
+
       const fileInput = document.getElementById('file-upload-input');
       const formErrorMessage = document.createElement('p');
       formErrorMessage.classList.add('message', 'error-message');
@@ -36,7 +42,7 @@
       }, false);
 
       document.querySelector('.file-upload-form').addEventListener('submit', event => {
-        
+
         if (fileNameMessage === 'No file selected') {
           event.preventDefault();
           document.querySelector('main section').appendChild(formErrorMessage);
